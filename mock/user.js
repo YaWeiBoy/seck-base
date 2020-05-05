@@ -86,7 +86,25 @@ const users = {
   'editor-token': {
     introduction: 'I am an editor',
     avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-    modules: [],
+    modules: [{
+      icon: 'svg-name',
+      id: '1194855828424232960',
+      isAlive: true,
+      moduleName: 'permission',
+      moduleText: 'table',
+      parentModuleId: '1',
+      path: '/icon',
+      sequence: 0
+    }, {
+      icon: 'svg-name',
+      id: '1194855828424232960',
+      isAlive: true,
+      moduleName: 'permission',
+      moduleText: 'table',
+      parentModuleId: '1',
+      path: '/icon/index',
+      sequence: 0
+    }],
     user: {
       authUpdateTime: null,
       companyId: '1',
