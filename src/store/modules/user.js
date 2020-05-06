@@ -73,7 +73,7 @@ const actions = {
         commit('SET_USER', user)
         commit('SET_AVATAR', avatar)
         commit('SET_MODULES', modules)
-        commit('SET_ROLES', ['vist'])
+        commit('SET_ROLES', [user.isAdmin ? 'admin' : 'vist'])
         resolve(data)
       }).catch(error => {
         reject(error)
