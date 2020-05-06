@@ -1,7 +1,6 @@
 
 const tokens = {
   admin: {
-    isAdmin: true,
     loginName: 'zyw',
     loginType: 0,
     roleId: '1',
@@ -65,6 +64,7 @@ const users = {
       sequence: 0
     }],
     user: {
+      isAdmin: true,
       authUpdateTime: null,
       companyId: '1',
       createTime: '2020-04-09 09:52:57',
@@ -106,6 +106,7 @@ const users = {
       sequence: 0
     }],
     user: {
+      isAdmin: false,
       authUpdateTime: null,
       companyId: '1',
       createTime: '2020-04-09 09:52:57',
