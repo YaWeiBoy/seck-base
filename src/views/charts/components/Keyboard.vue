@@ -34,13 +34,6 @@ export default {
   mounted() {
     this.initChart()
   },
-  beforeDestroy() {
-    if (!this.chart) {
-      return
-    }
-    this.chart.dispose()
-    this.chart = null
-  },
   methods: {
     initChart() {
       this.chart = echarts.init(document.getElementById(this.id))
