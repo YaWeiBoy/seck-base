@@ -1,35 +1,32 @@
 <template>
-  <div class="home-container">
-    <div class="home-text">name: {{ name }}</div>
-    <div class="home-text">roles: <span v-for="role in roles" :key="role">{{ role }}</span></div>
+  <div class="dashboard-container">
+    <component :is="currentRole" />
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import adminDashboard from './admin'
+import editorDashboard from './editor'
 
 export default {
-  name: 'Home',
+  name: 'Dashboard',
+  components: { adminDashboard, editorDashboard },
+  data() {
+    return {
+      currentRole: 'adminDashboard'
+    }
+  },
   computed: {
     ...mapGetters([
-      'name',
       'roles'
     ])
   },
   created() {
-    console.log(this.$store)
+    console.log(this.roles)
+    if (!this.roles.includes('admin')) {
+      this.currentRole = 'editorDashboard'
+    }
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.home {
-  &-container {
-    margin: 30px;
-  }
-  &-text {
-    font-size: 30px;
-    line-height: 46px;
-  }
-}
-</style>
