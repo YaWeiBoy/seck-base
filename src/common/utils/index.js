@@ -208,7 +208,7 @@ export function generateTree(routes, basePath = '/', checkedKeys) {
     if (route.children) {
       route.children = generateTree(route.children, routePath, checkedKeys)
     }
-    if (checkedKeys.some(key => key.path === routePath) || (route.children && route.children.length >= 1)) {
+    if (routePath === '/*' || checkedKeys.some(key => key.path === routePath) || (route.children && route.children.length >= 1)) {
       res.push(route)
     }
   }
