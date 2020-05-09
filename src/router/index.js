@@ -74,16 +74,10 @@ export const constantRoutes = [
   {
     path: '/example',
     component: Layout,
-    redirect: '/example/table',
+    redirect: '/example/tree',
     name: 'Example',
     meta: { title: 'Example', icon: 'example' },
     children: [
-      {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
-      },
       {
         path: 'tree',
         name: 'Tree',
@@ -92,7 +86,27 @@ export const constantRoutes = [
       }
     ]
   },
-
+  {
+    path: '/table',
+    component: Layout,
+    redirect: '/newtable',
+    name: 'Table',
+    meta: { title: 'Table', icon: 'table' },
+    children: [
+      {
+        path: 'newtable',
+        name: 'NewTable',
+        component: () => import('@/views/table/index'),
+        meta: { title: 'Table' }
+      },
+      {
+        path: 'complex-table',
+        name: 'ComplexTable',
+        component: () => import('@/views/table/complex-table'),
+        meta: { title: 'ComplexTable' }
+      }
+    ]
+  },
   {
     path: '/form',
     component: Layout,
@@ -112,8 +126,6 @@ export const constantRoutes = [
   nestedRouter
   // tableRouter,
 
-  // 404 page must be placed at the end !!!
-  // { path: '*', redirect: '/404', hidden: true }
 ]
 export const asyncRoutes = [
   {
@@ -142,6 +154,7 @@ export const asyncRoutes = [
   {
     path: '/icon',
     component: Layout,
+    redirect: 'noRedirect',
     children: [
       {
         path: 'index',
